@@ -7,7 +7,7 @@ BUILD_DIR = ./build
 OBJ_DIR = $(BUILD_DIR)/obj
 CFLAGS = -I$(INCLUDE_DIR) -I$(DEPS_DIR) -L$(LIBS_DIR)
 LIBS_FLAGS = -lglfw3 -lraylib -lopengl32 -lgdi32
-OBJ = main.o
+OBJ = main.o menu.o
 
 ifeq ($(CONFIG), DEBUG)
 	CFLAGS += -W -Wall -DDEBUG
@@ -21,12 +21,15 @@ main: $(OBJ)
 main.o: $(SRC_DIR)/main.c
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/main.c -o $(OBJ_DIR)/main.o
 
+menu.o: $(SRC_DIR)/snake+/components/menu.c
+	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/components/menu.c -o $(OBJ_DIR)/menu.o
+
 pch: $(INCLUDE_DIR)/pch.h
 	$(CC) -I$(INCLUDE_DIR) -I$(DEPS_DIR) $(INCLUDE_DIR)/pch.h
 
 install:
-	@mkdir -p $(BUILD_DIR) && \
-	@mkdir -p $(OBJ_DIR) 
+	mkdir -p $(BUILD_DIR) && \
+	mkdir -p $(OBJ_DIR) 
 
 clean: 
 	@rm -rf $(BUILD_DIR)

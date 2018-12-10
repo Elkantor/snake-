@@ -1,8 +1,10 @@
 #include "pch.h"
+#include "snake+/components/menu.h"
+#include "snake+/components_definition.h"
 
 int main(void){
-   InitWindow(800, 600, "Snake+");
-   SetTargetFPS(60);
+    // InitWindow(800, 600, "Snake+");
+    // SetTargetFPS(60);
     DEBUG_LOG(
         "Initialization correclty done", 
         __FILE__,
@@ -10,12 +12,13 @@ int main(void){
         __LINE__
     );
 
-   while(!WindowShouldClose()){
-       BeginDrawing();
-           ClearBackground(RAYWHITE);
-       EndDrawing();
-   }
-   CloseWindow();
+    SNAKE_DRAW_MENU(in_game_menu);
+    // while(!WindowShouldClose()){
+    //     BeginDrawing();
+    //         ClearBackground(RAYWHITE);
+    //     EndDrawing();
+    // }
+    // CloseWindow();
     return 0;
 }
 
