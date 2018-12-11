@@ -2,11 +2,9 @@
 #include "snake+/components/menu.h"
 #include "snake+/components_definition.h"
 
-enum snake_active_menu{
-    main_menu,
-    in_game_menu,
-    none_menu
-};
+void snake_draw_menu(const unsigned short* in_id){
+    menus[*in_id].draw_function();
+}
 
 void snake_draw_main_menu(){
     DEBUG_LOG(
@@ -34,3 +32,6 @@ void snake_draw_none_menu(){
         __LINE__
     );
 }
+
+
+

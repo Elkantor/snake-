@@ -1,9 +1,11 @@
 #pragma once
 
-#define _CONCAT(x,y) x##y
-#define CONCAT(x,y) _CONCAT(x,y)
-#define SNAKE_DRAW_MENU(MENU) CONCAT(snake_draw_, MENU) ();
+typedef struct snake_menu {
+    unsigned int id: 3;
+    void (*draw_function)();
+} snake_menu;
 
+void snake_draw_menu(const unsigned short* in_id);
 void snake_draw_main_menu();
 void snake_draw_in_game_menu();
-void snake_draw_none();
+void snake_draw_none_menu();
