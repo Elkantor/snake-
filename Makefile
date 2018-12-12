@@ -5,9 +5,12 @@ DEPS_DIR = ./deps
 LIBS_DIR = ./libs
 BUILD_DIR = ./build
 OBJ_DIR = $(BUILD_DIR)/obj
-CFLAGS = -I$(INCLUDE_DIR) -I$(DEPS_DIR) -L$(LIBS_DIR)
-LIBS_FLAGS = -lglfw3 -lraylib -lopengl32 -lgdi32
-OBJ = main.o menu.o
+CFLAGS = -I$(INCLUDE_DIR) -I$(DEPS_DIR)
+LIBS_FLAGS = -L$(LIBS_DIR) -lglfw3 -lraylib -lopengl32 -lgdi32
+OBJ = \
+	main.o \
+	menu.o \
+	components_definition.o
 
 ifeq ($(CONFIG), DEBUG)
 	CFLAGS += -W -Wall -DDEBUG
@@ -23,6 +26,9 @@ main.o: $(SRC_DIR)/main.c
 
 menu.o: $(SRC_DIR)/snake+/components/menu.c
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/components/menu.c -o $(OBJ_DIR)/menu.o
+
+components_definition.o: $(SRC_DIR)/snake+/components_definition.c
+	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/components_definition.c -o $(OBJ_DIR)/components_definition.o
 
 pch: $(INCLUDE_DIR)/pch.h
 	$(CC) -I$(INCLUDE_DIR) -I$(DEPS_DIR) $(INCLUDE_DIR)/pch.h
