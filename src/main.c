@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "snake+/components_definition.c"
+#include "snake+/components_definition.h"
 
 int main(void){
     InitWindow(1280, 720, "Snake+");
