@@ -16,12 +16,16 @@ int main(void){
     *id_active_menu = snake_main_menu;
     snake_draw_menu_functions[*id_active_menu]();
     while(!WindowShouldClose()){
-        BeginDrawing();
-            ClearBackground(RAYWHITE);
-        EndDrawing();
+        DoDraw();
     }
     CloseWindow();
     snake_free_components();
     return 0;
+}
+
+void DoDraw(){
+    BeginDrawing();
+        ClearBackground(RAYWHITE);
+    EndDrawing();
 }
 
