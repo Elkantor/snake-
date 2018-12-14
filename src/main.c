@@ -1,5 +1,6 @@
 #include "pch.h"
-#include "snake+/components_definition.h"
+#include "snake+/global_const.h"
+#include "snake+/global_alter.h"
 
 int main(void){
     InitWindow(1280, 720, "Snake+");
@@ -12,8 +13,8 @@ int main(void){
     );
     
     snake_initialize_components();
-    *id_active_menu = 0;
-    snake_draw_menu(id_active_menu);
+    *id_active_menu = snake_main_menu;
+    snake_draw_menu_functions[*id_active_menu]();
     while(!WindowShouldClose()){
         BeginDrawing();
             ClearBackground(RAYWHITE);

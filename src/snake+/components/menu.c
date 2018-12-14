@@ -1,10 +1,6 @@
 #include "pch.h"
 #include "snake+/components/menu.h"
-#include "snake+/components_definition.h"
-
-void snake_draw_menu(const unsigned short* in_id){
-    menus[*in_id].draw_function();
-}
+#include "snake+/global_const.h"
 
 void snake_draw_main_menu(){
     DEBUG_LOG(

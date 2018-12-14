@@ -1,9 +1,9 @@
 #pragma once
 #include <stdbool.h>
-#include "snake+/components/menu.h"
+#include "snake+/global_const.h"
 
 // Menus
 bool test_const_snake_menus(
     const unsigned short in_count_menus,
-    const snake_menu* in_menus
+    void (*const *in_menus_functions)()
 );
