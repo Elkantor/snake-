@@ -25,8 +25,8 @@ void test_const_snake_menus_functions(
             __FILE__,
             __FUNCTION__,
             __LINE__
-        );
+        );  
         exit(1);
     };
-    printf("[LOG]: testing the menu functions: OK\n");
+    printf("[LOG]: testing the menus functions: OK\n");
 }

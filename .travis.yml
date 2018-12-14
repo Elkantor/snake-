@@ -1,0 +1,23 @@
+dist: trusty
+sudo: required
+language:
+  - c
+compiler:
+  - gcc
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-8
+      - make
+
+script:
+  # Check versions of gcc
+  - gcc -v
+  # Run the test configuration
+  - cd test
+  - make clean && make install
+  - make pch
+  - make
+  - ./build/main

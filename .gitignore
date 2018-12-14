@@ -1,4 +1,6 @@
 build/
 build/*
+test/build/
+test/build/*
 *.gch
 .vscode

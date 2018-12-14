@@ -10,7 +10,7 @@ TEST_BUILD_DIR = ./build
 OBJ_DIR = $(BUILD_DIR)/obj
 TEST_OBJ_DIR = $(TEST_BUILD_DIR)/obj
 CFLAGS = -I$(INCLUDE_DIR) -I$(DEPS_DIR) -I$(TEST_INCLUDE_DIR) -L$(LIBS_DIR)
-LIBS_FLAGS = -lglfw3 -lraylib -lopengl32 -lgdi32
+LIBS_FLAGS = 
 CFLAGS += -W -Wall -DDEBUG 
 OBJ = \
 	$(TEST_OBJ_DIR)/main.o \
@@ -20,7 +20,7 @@ OBJ = \
 	$(OBJ_DIR)/error.o
 
 main: $(OBJ)
-	$(CC) $(OBJ) $(CFLAGS) $(LIBS_FLAGS) $(FLAG_CONF) -o $(TEST_BUILD_DIR)/main.exe 
+	$(CC) $(OBJ) $(CFLAGS) $(LIBS_FLAGS) $(FLAG_CONF) -o $(TEST_BUILD_DIR)/main 
 
 $(TEST_OBJ_DIR)/main.o: $(TEST_SRC_DIR)/main.c
 	$(CC) -c $(CFLAGS) $(TEST_SRC_DIR)/main.c -o $(TEST_OBJ_DIR)/main.o

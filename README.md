@@ -1,10 +1,11 @@
+[![Build Status](https://travis-ci.org/Elkantor/snake-.svg?branch=develop)](https://travis-ci.org/Elkantor/snake-.svg?branch=develop)
 [![Language](https://img.shields.io/badge/language-C-blue.svg)](https://isocpp.org/)
 [![Standard](https://img.shields.io/badge/C-99-blue.svg)](https://en.wikipedia.org/wiki/C99)
 
 # Snake+
-> snake+ (and not snake- as the github link, because github does not authorize the '+' char ;)) is a 2D game
+> snake+ (and not snake- like the github link, because github does not authorize the '+' char ;)) is a 2D game
 written in C99 with the raylib library, just for fun.
-It's a mixted between a classical snake game and a 2D RPG/rogue-like game.
+It's a mix between a classical snake game and a 2D RPG/rogue-like game.
 
 
 ## Getting Started
