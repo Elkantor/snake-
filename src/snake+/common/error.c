@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "snake+/common/error.h"
 #include "snake+/global_alter.h"
 
@@ -13,4 +14,5 @@ void snake_error_exit(
         in_line
     );
     snake_free_components();
+    exit(1);
 }
