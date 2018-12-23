@@ -8,7 +8,7 @@
 
 void snake_draw_main_menu(){
     #if TEST
-        sprintf(function_name, "%s", __PRETTY_FUNCTION__);
+        test_add_function_name(__PRETTY_FUNCTION__, &functions_count, functions_names);
         return;
     #endif
 
@@ -22,7 +22,7 @@ void snake_draw_main_menu(){
 
 void snake_draw_in_game_menu(){
     #if TEST
-        sprintf(function_name, "%s", __PRETTY_FUNCTION__);
+        test_add_function_name(__PRETTY_FUNCTION__, &functions_count, functions_names);
         return;
     #endif
 
@@ -36,7 +36,7 @@ void snake_draw_in_game_menu(){
 
 void snake_draw_none_menu(){
     #if TEST
-        sprintf(function_name, "%s", __PRETTY_FUNCTION__);
+        test_add_function_name(__PRETTY_FUNCTION__, &functions_count, functions_names);
         return;
     #endif
     

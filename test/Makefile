@@ -12,7 +12,7 @@ OBJ_DIR = $(BUILD_DIR)/obj
 TEST_OBJ_DIR = $(TEST_BUILD_DIR)/obj
 CFLAGS = -I$(INCLUDE_DIR) -I$(DEPS_DIR) -I$(TEST_INCLUDE_DIR) -L$(TEST_LIBS_DIR) -DTEST
 LIBS_FLAGS = 
-CFLAGS += -W -Wall -DDEBUG 
+CFLAGS += -W -Wall -DDEBUG -lgcc -std=c99
 OBJ = \
 	$(TEST_OBJ_DIR)/main.o \
 	$(OBJ_DIR)/menu.o \

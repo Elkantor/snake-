@@ -13,7 +13,7 @@ int main(void){
     );
     
     snake_initialize_components();
-    *id_active_menu = snake_main_menu;
+    *id_active_menu = SNAKE_MAIN_MENU;
     snake_draw_menu_functions[*id_active_menu]();
     while(!WindowShouldClose()){
         BeginDrawing();
