@@ -15,6 +15,10 @@ int main(void){
     snake_initialize_components();
     *id_active_menu = SNAKE_MAIN_MENU;
     snake_draw_menu_functions[*id_active_menu]();
+
+    *id_active_input = SNAKE_LEFT_INPUT;
+    snake_handle_inputs_functions[*id_active_input]();
+
     while(!WindowShouldClose()){
         BeginDrawing();
             ClearBackground(RAYWHITE);

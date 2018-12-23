@@ -16,6 +16,7 @@ CFLAGS += -W -Wall -DDEBUG -lgcc -std=c99
 OBJ = \
 	$(TEST_OBJ_DIR)/main.o \
 	$(OBJ_DIR)/menu.o \
+	$(OBJ_DIR)/inputs.o \
 	$(OBJ_DIR)/global_alter.o \
 	$(OBJ_DIR)/global_const.o \
 	$(OBJ_DIR)/error.o \
@@ -33,6 +34,9 @@ $(OBJ_DIR)/error.o: $(SRC_DIR)/snake+/common/error.c
 
 $(OBJ_DIR)/menu.o: $(SRC_DIR)/snake+/components/menu.c
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/components/menu.c -o $(OBJ_DIR)/menu.o
+
+$(OBJ_DIR)/inputs.o: $(SRC_DIR)/snake+/components/inputs.c
+	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/components/inputs.c -o $(OBJ_DIR)/inputs.o
 
 $(OBJ_DIR)/global_alter.o: $(SRC_DIR)/snake+/global_alter.c
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/global_alter.c -o $(OBJ_DIR)/global_alter.o

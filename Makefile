@@ -17,6 +17,7 @@ endif
 OBJ = \
 	main.o \
 	menu.o \
+	inputs.o \
 	global_alter.o \
 	global_const.o \
 	error.o
@@ -33,6 +34,9 @@ error.o: $(SRC_DIR)/snake+/common/error.c
 
 menu.o: $(SRC_DIR)/snake+/components/menu.c
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/components/menu.c -o $(OBJ_DIR)/menu.o
+
+inputs.o: $(SRC_DIR)/snake+/components/inputs.c
+	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/components/inputs.c -o $(OBJ_DIR)/inputs.o
 
 global_alter.o: $(SRC_DIR)/snake+/global_alter.c
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/global_alter.c -o $(OBJ_DIR)/global_alter.o
