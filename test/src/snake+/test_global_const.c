@@ -2,6 +2,7 @@
 #include "common/ptest.h"
 #include "snake+/global_const.h"
 #include "snake+/test_global_const.h"
+#include "snake+/global_alter.h"
 #include "test.h"
 
 
@@ -12,15 +13,30 @@ void test_menus_functions(void){
 
 
     test_flush_functions_names(functions_names, &functions_count);
-    snake_draw_menu_functions[SNAKE_NONE_MENU]();
+    *id_active_menu_function = SNAKE_NONE_MENU;
+    snake_draw_menu_functions[*id_active_menu_function](
+        id_active_menu_function,
+        *id_active_main_menu_function,
+        *id_active_in_game_menu_function
+    );
     PT_ASSERT(strcmp(functions_names[functions_count-1], "snake_draw_none_menu") == 0);
 
     test_flush_functions_names(functions_names, &functions_count);
-    snake_draw_menu_functions[SNAKE_MAIN_MENU]();
+    *id_active_menu_function = SNAKE_MAIN_MENU;
+    snake_draw_menu_functions[*id_active_menu_function](
+        id_active_menu_function,
+        *id_active_main_menu_function,
+        *id_active_in_game_menu_function
+    );
     PT_ASSERT(strcmp(functions_names[functions_count-1], "snake_draw_main_menu") == 0);
 
     test_flush_functions_names(functions_names, &functions_count);
-    snake_draw_menu_functions[SNAKE_IN_GAME_MENU]();
+    *id_active_menu_function = SNAKE_IN_GAME_MENU;
+    snake_draw_menu_functions[*id_active_menu_function](
+        id_active_menu_function,
+        *id_active_main_menu_function,
+        *id_active_in_game_menu_function
+    );
     PT_ASSERT(strcmp(functions_names[functions_count-1], "snake_draw_in_game_menu") == 0);
 }
 

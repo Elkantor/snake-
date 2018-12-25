@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "snake+/global_alter.h"
+#include "snake+/definitions.h"
+#include "snake+/global_const.h"
 
 // Menus
 uint8_t* id_active_menu_function;
@@ -38,6 +40,18 @@ void snake_initialize_components(){
 #undef ALLOC
 #undef CHECK
 
+void snake_default_initialisation(){
+    // Default menu
+    *id_active_menu_function = SNAKE_MAIN_MENU;
+
+    // Default resolution
+    *id_active_main_menu_function = SNAKE_MAIN_MENU_1280x720;
+    *id_active_in_game_menu_function = SNAKE_IN_GAME_MENU_1280x720;
+
+    // Default input pressed
+    *id_active_input_function = SNAKE_LEFT_INPUT;
+    snake_handle_inputs_functions[*id_active_input_function]();
+}
 
 void snake_free_components(){    
     // Menus

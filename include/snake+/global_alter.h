@@ -13,4 +13,5 @@ extern uint8_t* id_active_in_game_menu_function;
 extern uint8_t* id_active_input_function;
 
 void snake_initialize_components();
+void snake_default_initialisation();
 void snake_free_components();
