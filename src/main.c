@@ -21,13 +21,15 @@ int main(void){
     snake_default_initialisation();
     InitWindow(1280, 720, "Snake+");
     SetWindowMinSize(1280, 720);
-    SetTargetFPS(60);
 
     while(!WindowShouldClose()){
         BeginDrawing();
             ClearBackground(LIGHTGRAY);
-            DrawFPS(20, 20);
+            #ifdef DEBUG
+                DrawFPS(20, 20);
+            #endif
             snake_draw_menu_functions[*id_active_menu_function](
+                id_active_menu_function,
                 *id_active_main_menu_function,
                 *id_active_in_game_menu_function
             );
