@@ -60,9 +60,9 @@ void snake_draw_main_menu_1280_720(){
         return;
     #endif
 
-    
-
+    snake_draw_play_button(400, 200, 480, 200, 72);
 }
+
 void snake_draw_main_menu_1920_1080(){
     #if TEST
         test_add_function_name(__PRETTY_FUNCTION__, &functions_count, functions_names);
@@ -76,6 +76,7 @@ void snake_draw_main_menu_1920_1080(){
         __LINE__
     );
 }
+
 void snake_draw_main_menu_2560_1440(){
     #if TEST
         test_add_function_name(__PRETTY_FUNCTION__, &functions_count, functions_names);

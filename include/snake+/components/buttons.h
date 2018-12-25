@@ -1,10 +1,9 @@
 #pragma once
 
 void snake_draw_play_button(
-    #if TEST
-        test_add_function_name(__PRETTY_FUNCTION__, &functions_count, functions_names);
-        return;
-    #endif
-
-
+    const uint16_t in_pos_x,
+    const uint16_t in_pos_y,
+    const uint16_t in_width,
+    const uint16_t in_height,
+    const uint8_t in_font_size
 );
