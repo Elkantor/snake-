@@ -40,6 +40,37 @@ void test_menus_functions(void){
     PT_ASSERT(strcmp(functions_names[functions_count-1], "snake_draw_in_game_menu") == 0);
 }
 
+void test_main_menus_functions(void){
+    PT_ASSERT(SNAKE_MAIN_MENU_1280x720 == 0);
+    PT_ASSERT(SNAKE_MAIN_MENU_1920x1080 == 1);
+    PT_ASSERT(SNAKE_MAIN_MENU_2560x1440 == 2);
+
+    *id_active_menu_function = SNAKE_MAIN_MENU;
+
+    test_flush_functions_names(functions_names, &functions_count);
+    *id_active_main_menu_function = SNAKE_MAIN_MENU_1280x720;
+    snake_draw_main_menu_functions[*id_active_main_menu_function](
+        id_active_menu_function
+    );
+    PT_ASSERT(strcmp(functions_names[functions_count-1], "snake_draw_main_menu_1280_720") == 0);
+
+    test_flush_functions_names(functions_names, &functions_count);
+    *id_active_main_menu_function = SNAKE_MAIN_MENU_1920x1080;
+    snake_draw_main_menu_functions[*id_active_main_menu_function](
+        id_active_menu_function
+    );
+    PT_ASSERT(strcmp(functions_names[functions_count-1], "snake_draw_main_menu_1920_1080") == 0);
+
+    test_flush_functions_names(functions_names, &functions_count);
+    *id_active_main_menu_function = SNAKE_MAIN_MENU_2560x1440;
+    snake_draw_main_menu_functions[*id_active_main_menu_function](
+        id_active_menu_function
+    );
+    PT_ASSERT(strcmp(functions_names[functions_count-1], "snake_draw_main_menu_2560_1440") == 0);
+
+}
+
 void suite_global_const(void) {
     pt_add_test(test_menus_functions, "Test menus functions pointers", "Suite global const");
+    pt_add_test(test_main_menus_functions, "Test main menus functions pointers", "Suite global const");
 }
