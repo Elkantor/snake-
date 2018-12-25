@@ -17,6 +17,7 @@ OBJ = \
 	$(TEST_OBJ_DIR)/main.o \
 	$(OBJ_DIR)/menu.o \
 	$(OBJ_DIR)/inputs.o \
+	$(OBJ_DIR)/buttons.o \
 	$(OBJ_DIR)/global_alter.o \
 	$(OBJ_DIR)/global_const.o \
 	$(OBJ_DIR)/error.o \
@@ -37,6 +38,9 @@ $(OBJ_DIR)/menu.o: $(SRC_DIR)/snake+/components/menu.c
 
 $(OBJ_DIR)/inputs.o: $(SRC_DIR)/snake+/components/inputs.c
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/components/inputs.c -o $(OBJ_DIR)/inputs.o
+
+$(OBJ_DIR)/buttons.o: $(SRC_DIR)/snake+/components/buttons.c
+	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/components/buttons.c -o $(OBJ_DIR)/buttons.o
 
 $(OBJ_DIR)/global_alter.o: $(SRC_DIR)/snake+/global_alter.c
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/global_alter.c -o $(OBJ_DIR)/global_alter.o

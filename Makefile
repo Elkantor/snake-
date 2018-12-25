@@ -18,6 +18,7 @@ OBJ = \
 	main.o \
 	menu.o \
 	inputs.o \
+	buttons.o \
 	global_alter.o \
 	global_const.o \
 	error.o
@@ -25,6 +26,9 @@ OBJ = \
 
 main: $(OBJ)
 	$(CC) $(OBJ_DIR)/*.o $(CFLAGS) $(LIBS_FLAGS) $(FLAG_CONF) -o $(BUILD_DIR)/main.exe 
+
+exe:
+	$(CC) $(OBJ_DIR)/*.o $(CFLAGS) $(LIBS_FLAGS) $(FLAG_CONF) -o $(BUILD_DIR)/main.exe
 
 main.o: $(SRC_DIR)/main.c
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/main.c -o $(OBJ_DIR)/main.o
@@ -37,6 +41,9 @@ menu.o: $(SRC_DIR)/snake+/components/menu.c
 
 inputs.o: $(SRC_DIR)/snake+/components/inputs.c
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/components/inputs.c -o $(OBJ_DIR)/inputs.o
+
+buttons.o: $(SRC_DIR)/snake+/components/buttons.c
+	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/components/buttons.c -o $(OBJ_DIR)/buttons.o
 
 global_alter.o: $(SRC_DIR)/snake+/global_alter.c
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/snake+/global_alter.c -o $(OBJ_DIR)/global_alter.o
