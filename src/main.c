@@ -15,11 +15,7 @@ int main(void){
             #ifdef DEBUG
                 DrawFPS(20, 20);
             #endif
-            snake_draw_menu_functions[*id_active_menu_function](
-                id_active_menu_function,
-                *id_active_main_menu_function,
-                *id_active_in_game_menu_function
-            );
+            snake_draw_menu_functions[*id_active_menu_function]();
         EndDrawing();
     }
 

@@ -9,6 +9,9 @@ uint8_t* id_active_menu_function;
 // Main Menu
 uint8_t* id_active_main_menu_function;
 
+// Options Menu
+uint8_t* id_active_options_menu_function;
+
 // In Game Menu
 uint8_t* id_active_in_game_menu_function;
 
@@ -27,6 +30,10 @@ void snake_initialize_components(){
     // Main Menu
     id_active_main_menu_function = ALLOC(uint8_t, 1);
     CHECK(id_active_main_menu_function);
+    
+    // Options Menu
+    id_active_options_menu_function = ALLOC(uint8_t, 1);
+    CHECK(id_active_options_menu_function);
     
     // In Game Menu
     id_active_in_game_menu_function = ALLOC(uint8_t, 1);
@@ -47,6 +54,7 @@ void snake_default_initialisation(){
     // Default resolution
     *id_active_main_menu_function = SNAKE_MAIN_MENU_1280x720;
     *id_active_in_game_menu_function = SNAKE_IN_GAME_MENU_1280x720;
+    *id_active_options_menu_function = SNAKE_OPTIONS_MENU_1280x720;
 
     // Default input pressed
     *id_active_input_function = SNAKE_LEFT_INPUT;
@@ -59,6 +67,9 @@ void snake_free_components(){
 
     // Main Menu
     free(id_active_main_menu_function);
+
+    // Options Menu
+    free(id_active_options_menu_function);
     
     // In Game Menu
     free(id_active_in_game_menu_function);
