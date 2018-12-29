@@ -23,7 +23,6 @@ void snake_draw_options_menu(){
         return;
     #endif
     snake_draw_options_menu_functions[*id_active_options_menu_function]();
-
 }
 
 void snake_draw_in_game_menu(){
